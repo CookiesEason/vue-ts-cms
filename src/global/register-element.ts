@@ -9,6 +9,13 @@ import {
   ElInput,
   ElCheckbox,
   ElLink,
+  ElContainer,
+  ElMain,
+  ElHeader,
+  ElAside,
+  ElMenu,
+  ElMenuItem,
+  ElSubMenu,
 } from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
@@ -23,6 +30,13 @@ const components = [
   ElInput,
   ElCheckbox,
   ElLink,
+  ElContainer,
+  ElHeader,
+  ElMain,
+  ElAside,
+  ElMenu,
+  ElMenuItem,
+  ElSubMenu,
 ];
 
 export default {

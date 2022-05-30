@@ -1,15 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="410" height="404" viewBox="0 0 410 404" fill="none">
-<path d="M399.641 59.5246L215.643 388.545C211.844 395.338 202.084 395.378 198.228 388.618L10.5817 59.5563C6.38087 52.1896 12.6802 43.2665 21.0281 44.7586L205.223 77.6824C206.398 77.8924 207.601 77.8904 208.776 77.6763L389.119 44.8058C397.439 43.2894 403.768 52.1434 399.641 59.5246Z" fill="url(#paint0_linear)"/>
-<path d="M292.965 1.5744L156.801 28.2552C154.563 28.6937 152.906 30.5903 152.771 32.8664L144.395 174.33C144.198 177.662 147.258 180.248 150.51 179.498L188.42 170.749C191.967 169.931 195.172 173.055 194.443 176.622L183.18 231.775C182.422 235.487 185.907 238.661 189.532 237.56L212.947 230.446C216.577 229.344 220.065 232.527 219.297 236.242L201.398 322.875C200.278 328.294 207.486 331.249 210.492 326.603L212.5 323.5L323.454 102.072C325.312 98.3645 322.108 94.137 318.036 94.9228L279.014 102.454C275.347 103.161 272.227 99.746 273.262 96.1583L298.731 7.86689C299.767 4.27314 296.636 0.855181 292.965 1.5744Z" fill="url(#paint1_linear)"/>
-<defs>
-<linearGradient id="paint0_linear" x1="6.00017" y1="32.9999" x2="235" y2="344" gradientUnits="userSpaceOnUse">
-<stop stop-color="#41D1FF"/>
-<stop offset="1" stop-color="#BD34FE"/>
-</linearGradient>
-<linearGradient id="paint1_linear" x1="194.651" y1="8.81818" x2="236.076" y2="292.989" gradientUnits="userSpaceOnUse">
-<stop stop-color="#FFEA83"/>
-<stop offset="0.0833333" stop-color="#FFDD35"/>
-<stop offset="1" stop-color="#FFA800"/>
-</linearGradient>
-</defs>
-</svg>
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1653892005307" class="icon" viewBox="0 0 1390 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8388" xmlns:xlink="http://www.w3.org/1999/xlink" width="173.75" height="128"><defs><style type="text/css">@font-face { font-family: Georgia; src: local("Source Serif 4"); }
+@font-face { font-family: "New York"; src: local("Source Serif 4"); }
+@font-face { font-family: Times; src: local("Source Serif 4"); }
+@font-face { font-family: "Time New Roman"; src: local("Source Serif 4"); }
+@font-face { font-family: Arial; src: local("Source Sans 3"); }
+@font-face { font-family: Helvetica; src: local("Source Sans 3"); }
+@font-face { font-family: "Helvetica Neue"; src: local("Source Sans 3"); }
+@font-face { font-family: "Open Sans"; src: local("Source Sans 3"); }
+@font-face { src: local("Source Sans 3"); }
+@font-face { font-family: Tahoma; src: local("Source Sans 3"); }
+@font-face { font-family: Trebuchet; src: local("Source Sans 3"); }
+@font-face { font-family: "Trebuchet MS"; src: local("Source Sans 3"); }
+@font-face { font-family: Ubuntu; src: local("Source Sans 3"); }
+@font-face { font-family: Verdana; src: local("Source Sans 3"); }
+@font-face { font-family: Consolas; src: local("Source Code Pro"); }
+@font-face { font-family: Courier; src: local("Source Code Pro"); }
+@font-face { font-family: "Courier New"; src: local("Source Code Pro"); }
+@font-face { font-family: "DejaVu Sans Mono"; src: local("Source Code Pro"); }
+@font-face { font-family: "Lucida Console"; src: local("Source Code Pro"); }
+@font-face { font-family: "SF Mono"; src: local("Source Code Pro"); }
+@font-face { font-family: "Ubuntu Mono"; src: local("Source Code Pro"); }
+@font-face { font-family: SimSun; src: local("Source Han Sans SC"); }
+@font-face { font-family: SimSun-ExtB; src: local("Source Han Sans SC"); }
+@font-face { font-family: 宋体; src: local("Source Han Sans SC"); }
+@font-face { font-family: NSimSun; src: local("Source Han Sans SC"); }
+@font-face { font-family: 新宋体; src: local("Source Han Sans SC"); }
+@font-face { font-family: SimHei; src: local("Source Han Sans SC"); }
+@font-face { font-family: 黑体; src: local("Source Han Sans SC"); }
+@font-face { font-family: "Microsoft YaHei UI"; src: local("Source Han Sans SC"); }
+@font-face { font-family: "Microsoft YaHei"; src: local("Source Han Sans SC"); }
+@font-face { font-family: 微软雅黑; src: local("Source Han Sans SC"); }
+@font-face { font-family: "STHeiti SC"; src: local("Source Han Sans SC"); }
+@font-face { font-family: "PingFang SC"; src: local("Source Han Sans SC"); }
+@font-face { font-family: 苹方-简; src: local("Source Han Sans SC"); }
+@font-face { font-family: MingLiU; src: local("Source Han Sans TC"); }
+@font-face { font-family: MingLiU-ExtB; src: local("Source Han Sans TC"); }
+@font-face { font-family: PMingLiU; src: local("Source Han Sans TC"); }
+@font-face { font-family: PMingLiU-ExtB; src: local("Source Han Sans TC"); }
+@font-face { font-family: "Microsoft JhengHei UI"; src: local("Source Han Sans TC"); }
+@font-face { font-family: "Microsoft JhengHei"; src: local("Source Han Sans TC"); }
+@font-face { font-family: 微軟正黑體; src: local("Source Han Sans TC"); }
+@font-face { font-family: "STHeiti TC"; src: local("Source Han Sans TC"); }
+@font-face { font-family: "PingFang TC"; src: local("Source Han Sans TC"); }
+@font-face { font-family: 蘋方-繁; src: local("Source Han Sans TC"); }
+@font-face { font-family: MingLiU_HKSCS; src: local("Source Han Sans HC"); }
+@font-face { font-family: MingLiU_HKSCS-ExtB; src: local("Source Han Sans HC"); }
+@font-face { font-family: "PingFang HK"; src: local("Source Han Sans HC"); }
+@font-face { font-family: 蘋方-港; src: local("Source Han Sans HC"); }
+@font-face { font-family: "MS Mincho"; src: local("Source Han Sans"); }
+@font-face { font-family: "MS PMincho"; src: local("Source Han Sans"); }
+@font-face { font-family: Meiryo; src: local("Source Han Sans"); }
+@font-face { font-family: "Meiryo UI"; src: local("Source Han Sans"); }
+@font-face { font-family: "MS Gothic"; src: local("Source Han Sans"); }
+@font-face { font-family: "MS PGothic"; src: local("Source Han Sans"); }
+@font-face { font-family: "MS UI Gothic"; src: local("Source Han Sans"); }
+@font-face { font-family: "Yu Gothic"; src: local("Source Han Sans"); }
+@font-face { font-family: "Yu Gothic UI"; src: local("Source Han Sans"); }
+@font-face { font-family: "Malgun Gothic"; src: local("Source Han Sans K"); }
+</style></defs><path d="M1279.461328 1023.998758h-73.995772a7.040297 7.040297 0 1 1 0-14.080594h73.995772a7.040297 7.040297 0 1 1 0 14.080594zM1151.650562 1023.998758H167.345221a7.040297 7.040297 0 1 1 0-14.080594h984.305341a7.040297 7.040297 0 1 1 0 14.080594zM135.263372 1023.998758H111.45999a7.040297 7.040297 0 1 1 0-14.080594h23.803382a7.040297 7.040297 0 1 1 0 14.080594z" fill="#7ECAFC" p-id="8389"></path><path d="M111.402862 447.746266c-0.699186-7.821449-7.606601-13.593772-15.426807-12.894586a14.627028 14.627028 0 0 0-9.558859 5.065686 13.660834 13.660834 0 0 0-3.179248 10.316413 14.6084 14.6084 0 0 0 5.140199 9.558859 13.088321 13.088321 0 0 0 9.003732 3.381677h1.126398c7.820207-0.699186 13.593772-7.606601 12.894585-15.428049z m-8.66221 11.406796a11.529744 11.529744 0 0 1-12.756736-1.398372 10.561067 10.561067 0 0 1-4.0523-7.801579 11.539679 11.539679 0 0 1 2.593075-8.488345 10.578453 10.578453 0 0 1 7.821448-4.053543h1.033256a11.447779 11.447779 0 0 1 11.508632 10.475377 11.529744 11.529744 0 0 1-6.147375 11.266462zM1261.965525 127.517679c-0.968677-10.820623-10.527536-18.809727-21.346916-17.841049a20.221761 20.221761 0 0 0-13.223688 7.008008 18.901627 18.901627 0 0 0-4.401272 14.27433 20.210584 20.210584 0 0 0 7.113569 13.224929 18.108057 18.108057 0 0 0 12.457439 4.679457h1.558577c10.819381-0.966194 18.807243-10.522568 17.842291-21.345675z m-11.986761 15.78199a15.955855 15.955855 0 0 1-17.652282-1.934871 14.6084 14.6084 0 0 1-5.608393-10.794543 15.96579 15.96579 0 0 1 3.587832-11.745834 14.639447 14.639447 0 0 1 10.821864-5.608393h1.430662c8.279708-0.074514 15.221895 6.241759 15.922324 14.494145a15.947161 15.947161 0 0 1-8.502007 15.589496zM153.703015 103.577688a3.055059 3.055059 0 0 1-3.055059-3.055059V80.76782L136.695276 94.7205a3.132057 3.132057 0 0 1-4.428594-4.427352l13.955163-13.95268h-19.790823a3.06872 3.06872 0 1 1 0-6.138682h19.790823l-13.955163-13.786266a2.915967 2.915967 0 0 1 0-4.427352 2.914725 2.914725 0 0 1 2.215539-1.015869c0.850697 0 1.656687 0.368843 2.213055 1.015869l13.951438 13.818555V46.049431a3.051334 3.051334 0 0 1 4.693117-3.164346 3.04264 3.04264 0 0 1 1.277909 3.164346v19.757292l14.089288-13.953921a2.918451 2.918451 0 0 1 4.428594 0 2.918451 2.918451 0 0 1 0 4.427352l-13.955163 13.955163h19.75605a3.067478 3.067478 0 1 1 0 6.136199h-19.75605l13.955163 13.956405c0.791086 0.787361 1.097834 1.94108 0.809715 3.021528a3.138266 3.138266 0 0 1-2.213055 2.215539 3.134541 3.134541 0 0 1-3.025254-0.813441l-14.089288-13.984969v19.756051c0.336553 1.71133-1.372293 3.053817-3.051333 3.053817h0.136608zM214.113708 940.446611h-8.443637v-8.444879c0-1.404582-1.136333-2.540915-2.540915-2.540915s-2.540915 1.136333-2.540915 2.540915v8.444879h-8.443638a2.539673 2.539673 0 1 0 0 5.081831h8.443638v8.443637a2.529738 2.529738 0 0 0 2.528496 2.526013l0.02608-0.109287a2.521045 2.521045 0 0 0 2.527254-2.528496v-8.330625h8.443637a2.542157 2.542157 0 0 0 0-5.083073zM1242.465305 869.652442c0 16.738248-11.334767 29.903566-25.352025 29.903566 14.05824 0 25.352025 13.391343 25.352025 29.904809 0-16.740732 11.336009-29.904808 25.348299-29.904809-14.05824 0-25.348299-13.386376-25.348299-29.903566z m0 0" fill="#CCCCCC" p-id="8390"></path><path d="M988.198679 129.231493H402.550016C319.268602 129.231493 252.104489 196.395606 252.104489 279.675778v586.993634c0 81.935201 67.164113 149.094346 150.445527 149.094347h586.992392c81.936443 0 149.095588-67.159146 149.095588-150.443044V279.675778c-0.001242-83.280172-67.160387-150.444285-150.439317-150.444285z" fill="#DFEFF7" p-id="8391"></path><path d="M326.618131 866.669412v-586.993634c0-83.280172 67.164113-150.444285 150.445527-150.444285h-74.513642C319.268602 129.231493 252.104489 196.395606 252.104489 279.675778v586.993634c0 81.935201 67.164113 149.094346 150.445527 149.094347h74.513642c-83.281414 0-150.445527-67.159146-150.445527-149.094347z" fill="#C7E6F9" p-id="8392"></path><path d="M989.542408 1022.804056H402.550016c-86.838198 0-157.485824-70.04034-157.485824-156.134644v-586.993634c0-42.158577 16.355744-81.732772 46.054398-111.431426s69.272849-46.054398 111.431426-46.054398h585.648663c42.157335 0 81.73153 16.355744 111.428942 46.054398 29.69617 29.698654 46.050673 69.271607 46.050673 111.431426v326.867752a7.040297 7.040297 0 1 1-14.080595 0V279.675778c0-79.072635-64.328869-143.403988-143.39902-143.403988H402.550016c-79.073877 0-143.403988 64.330111-143.403988 143.403988v586.993634c0 78.327499 64.330111 142.054049 143.403988 142.054049h586.992392c78.328741 0 142.055291-64.330111 142.055291-143.402746v-51.587036a7.040297 7.040297 0 1 1 14.080595 0v51.587036c-0.001242 86.836957-70.042824 157.483341-156.135886 157.483341z" fill="#7ECAFC" p-id="8393"></path><path d="M1138.636754 709.003513a7.040297 7.040297 0 0 1-7.040297-7.040297v-58.989966a7.040297 7.040297 0 1 1 14.080595 0v58.989966a7.040297 7.040297 0 0 1-7.040298 7.040297z" fill="#7ECAFC" p-id="8394"></path><path d="M482.123134 729.322142h-64.702679c-11.539679 0-20.605506-9.065826-20.605506-20.605506V443.320155c0-11.539679 9.067068-20.606748 20.605506-20.606748s20.605506 9.067068 20.605506 20.606748v244.789733h44.095931c11.539679 0 20.605506 9.067068 20.605506 20.606748s-9.065826 20.605506-20.604264 20.605506z" fill="#B1DDFC" p-id="8395"></path><path d="M645.727771 422.713407h-89.839857c-11.539679 0-20.60178 9.067068-20.60178 20.606748v265.396481c0 11.539679 9.063343 20.605506 20.60178 20.605506h89.839857c11.539679 0 20.605506-9.065826 20.605505-20.605506V443.320155c0-11.539679-9.065826-20.606748-20.605505-20.606748z m-20.601781 265.396481h-48.631328V463.925661h48.631328v224.184227z" fill="#FFFFFF" p-id="8396"></path><path d="M980.362327 422.713407h-89.839856c-11.539679 0-20.606748 9.067068-20.606748 20.606748v265.396481c0 11.539679 9.067068 20.605506 20.606748 20.605506h89.839856c11.538437 0 20.605506-9.065826 20.605506-20.605506V443.320155c0-11.539679-9.067068-20.606748-20.605506-20.606748z m-20.606747 265.396481H911.127977V463.925661h48.627603v224.184227z" fill="#B1DDFC" p-id="8397"></path><path d="M814.693663 729.322142h-90.252165c-11.538437 0-20.605506-9.065826-20.605506-20.605506V443.320155c0-11.539679 9.067068-20.606748 20.605506-20.606748h90.252165c11.539679 0 20.606748 9.067068 20.606748 20.606748v81.185097c0 11.539679-9.067068 20.60178-20.606748 20.60178-11.538437 0-20.605506-9.063343-20.605506-20.60178v-60.579591h-49.039911v224.184227h49.039911v-56.456503h-1.646751c-11.538437 0-20.605506-9.067068-20.605506-20.605505 0-11.539679 9.067068-20.606748 20.605506-20.606748h22.252257c11.539679 0 20.606748 9.067068 20.606748 20.606748v97.668756c0 11.539679-9.067068 20.605506-20.606748 20.605506z" fill="#209AFD" p-id="8398"></path></svg>
