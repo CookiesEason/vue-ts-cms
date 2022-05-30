@@ -1,8 +1,7 @@
 <template>
-  <h2>hello : {{ $store.state.name }}</h2>
-  <router-link to="/login">登录</router-link>
-  <router-link to="/main">首页</router-link>
-  <router-view></router-view>
+  <div class="container">
+    <router-view></router-view>
+  </div>
 </template>
 
 <style lang="less">
@@ -12,5 +11,9 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.container {
+  width: 100%;
+  height: 100%;
 }
 </style>
