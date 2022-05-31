@@ -22,7 +22,7 @@
               <span>{{ item.name }}</span>
             </template>
             <template v-for="subitem in item.children" :key="subitem.id">
-              <el-menu-item :index="subitem.id + ''">
+              <el-menu-item :index="subitem.id + ''" @click="handleMenuItemClick(subitem)">
                 <i v-if="subitem.icon" :class="subitem.icon"></i>
                 <span>{{ subitem.name }}</span>
               </el-menu-item>
@@ -42,6 +42,7 @@
 
 <script setup lang="ts">
 import { defineProps, toRefs, withDefaults } from 'vue';
+import { useRouter } from 'vue-router';
 import { useStore } from '@/store';
 
 const store = useStore();
@@ -53,6 +54,12 @@ const props = withDefaults(
   { collapse: false }
 );
 const { collapse } = toRefs(props);
+const router = useRouter();
+const handleMenuItemClick = (item: any) => {
+  router.push({
+    path: item.url ?? '/not-found',
+  });
+};
 </script>
 
 <style scoped lang="less">

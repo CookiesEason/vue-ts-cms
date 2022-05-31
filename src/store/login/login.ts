@@ -12,6 +12,7 @@ import {
 import { IAccountLoginType } from '@/network/login/type';
 
 import localCache from '@/utils/cache';
+import { mapMenusToRoutes } from '@/utils/map-router';
 
 const loginModule: Module<ILoginState, IRootState> = {
   namespaced: true,
@@ -63,6 +64,10 @@ const loginModule: Module<ILoginState, IRootState> = {
     },
     changeUserMenus(state, userMenus: any) {
       state.userMenus = userMenus;
+      const routes = mapMenusToRoutes(userMenus);
+      routes.forEach((route) => {
+        router.addRoute('main', route);
+      });
     },
   },
   getters: {},
