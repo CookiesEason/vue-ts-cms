@@ -16,6 +16,9 @@ import {
   ElMenu,
   ElMenuItem,
   ElSubMenu,
+  ElDropdownMenu,
+  ElDropdownItem,
+  ElDropdown,
 } from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
@@ -37,6 +40,9 @@ const components = [
   ElMenu,
   ElMenuItem,
   ElSubMenu,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem,
 ];
 
 export default {
