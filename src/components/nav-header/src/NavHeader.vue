@@ -5,22 +5,31 @@
       <ArrowLeftBold v-else />
     </el-icon>
     <div class="content">
-      <div>面包屑</div>
+      <breadcrumb :breadcrumbs="breadcrumbs" />
       <user-info />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, defineEmits } from 'vue';
+import { ref, defineEmits, computed } from 'vue';
+import { useStore } from '@/store';
 import UserInfo from './UserInfo.vue';
+import Breadcrumb from '@/components/base-ui/breadcrumb';
+import { pathMapBreadcrumbs } from '@/utils/map-router';
+import { useRoute } from 'vue-router';
 
 const emit = defineEmits(['foldChange']);
+const store = useStore();
+const route = useRoute();
 const isFold = ref(false);
 const handleFoldClick = () => {
   isFold.value = !isFold.value;
   emit('foldChange', isFold.value);
 };
+
+const userMenus = store.state.loginModule.userMenus;
+const breadcrumbs = computed(() => pathMapBreadcrumbs(userMenus, route.path));
 </script>
 
 <style scoped lang="less">
