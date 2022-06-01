@@ -1,5 +1,8 @@
 <template>
   <div class="hl-form">
+    <div class="header">
+      <slot name="header"></slot>
+    </div>
     <el-form :label-width="labelWidth">
       <el-row>
         <template v-for="item in formItems" :key="item.label">
@@ -9,6 +12,7 @@
                 <el-input
                   :placeholder="item.placeholder"
                   :show-password="item.type === 'password'"
+                  v-model="formData[`${item.field}`]"
                 />
               </template>
               <template v-else-if="item.type === 'select'">
@@ -16,6 +20,7 @@
                   :placeholder="item.placeholder"
                   v-bind="item.otherOptions"
                   style="width: 100%"
+                  v-model="formData[`${item.field}`]"
                 >
                   <el-option
                     v-for="option in item.options"
@@ -26,18 +31,25 @@
                 </el-select>
               </template>
               <template v-else-if="item.type === 'datepicker'">
-                <el-date-picker style="width: 100%" v-bind="item.otherOptions"></el-date-picker>
+                <el-date-picker
+                  style="width: 100%"
+                  v-bind="item.otherOptions"
+                  v-model="formData[`${item.field}`]"
+                ></el-date-picker>
               </template>
             </el-form-item>
           </el-col>
         </template>
       </el-row>
     </el-form>
+    <div class="footer">
+      <slot name="footer"></slot>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, toRefs, withDefaults } from 'vue';
+import { defineProps, ref, watch, withDefaults, defineEmits } from 'vue';
 import { IFormItem } from '../type/type';
 const props = withDefaults(
   defineProps<{
@@ -45,6 +57,7 @@ const props = withDefaults(
     labelWidth: string;
     itemStyle: object;
     colLayout: object;
+    modelValue: any;
   }>(),
   {
     colLayout: () => ({
@@ -56,7 +69,18 @@ const props = withDefaults(
     }),
   }
 );
-const { formItems, labelWidth } = toRefs(props);
+const emits = defineEmits(['update:modelValue']);
+
+const formData = ref({ ...props.modelValue });
+watch(
+  formData,
+  (newValue) => {
+    emits('update:modelValue', newValue);
+  },
+  {
+    deep: true,
+  }
+);
 </script>
 
 <style scoped>

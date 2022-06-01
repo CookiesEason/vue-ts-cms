@@ -26,6 +26,7 @@ import {
   ElOption,
   ElBreadcrumb,
   ElBreadcrumbItem,
+  ElAvatar,
 } from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
@@ -57,6 +58,7 @@ const components = [
   ElDatePicker,
   ElBreadcrumb,
   ElBreadcrumbItem,
+  ElAvatar,
 ];
 
 export default {
