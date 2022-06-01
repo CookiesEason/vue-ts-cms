@@ -9,7 +9,9 @@
           <nav-header @foldChange="handleFoldChange"></nav-header>
         </el-header>
         <el-main class="page-content">
-          <router-view></router-view>
+          <div class="page-info">
+            <router-view></router-view>
+          </div>
         </el-main>
       </el-container>
     </el-container>
@@ -43,11 +45,9 @@ const handleFoldChange = (isFold: boolean) => {
 
 .page-content {
   height: calc(100% - 48px);
-  color: #333;
-  text-align: center;
-  background-color: #f0f2f5;
 
   .page-info {
+    background-color: #fff;
     border-radius: 5px;
   }
 }
@@ -78,5 +78,11 @@ const handleFoldChange = (isFold: boolean) => {
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.el-main {
+  color: #333;
+  text-align: center;
+  background-color: #f0f2f5;
 }
 </style>

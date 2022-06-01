@@ -6,6 +6,9 @@ import router from './router';
 import store, { setupStore, key } from './store';
 import register from './global';
 
-createApp(App).use(register).use(router).use(store, key).mount('#app');
-
+const app = createApp(App);
+app.use(register);
+app.use(store, key);
 setupStore();
+app.use(router);
+app.mount('#app');

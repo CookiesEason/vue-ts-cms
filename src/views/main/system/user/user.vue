@@ -1,18 +1,13 @@
 <template>
   <div class="user">
-    <h2>user</h2>
+    <hl-form v-bind="config" />
+    <div class="content"></div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'user',
-  setup() {
-    return {};
-  },
-});
+<script setup lang="ts">
+import HlForm from '@/components/base-ui/form';
+import { config } from './config';
 </script>
 
 <style scoped></style>
