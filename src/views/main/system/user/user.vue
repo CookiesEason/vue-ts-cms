@@ -1,13 +1,14 @@
 <template>
   <div class="user">
-    <page-search :searchConfig="config" />
-    <div class="content"></div>
+    <page-search :searchConfig="searchConfig" />
+    <page-content :contentConfig="contentConfig" pageName="user"></page-content>
   </div>
 </template>
 
 <script setup lang="ts">
-import { config } from './config';
-import PageSearch from '@/components/page-search/src/PageSearch.vue';
+import { searchConfig, contentConfig } from './config';
+import PageSearch from '@/components/page-search';
+import PageContent from '@/components/page-content';
 </script>
 
 <style scoped></style>

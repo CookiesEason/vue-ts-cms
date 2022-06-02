@@ -27,6 +27,9 @@ import {
   ElBreadcrumb,
   ElBreadcrumbItem,
   ElAvatar,
+  ElTable,
+  ElTableColumn,
+  ElPagination,
 } from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
@@ -59,6 +62,9 @@ const components = [
   ElBreadcrumb,
   ElBreadcrumbItem,
   ElAvatar,
+  ElTable,
+  ElTableColumn,
+  ElPagination,
 ];
 
 export default {

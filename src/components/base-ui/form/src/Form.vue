@@ -55,8 +55,8 @@ const props = withDefaults(
   defineProps<{
     formItems: IFormItem[];
     labelWidth: string;
-    itemStyle: object;
-    colLayout: object;
+    itemStyle?: object;
+    colLayout?: object;
     modelValue: any;
   }>(),
   {
@@ -66,6 +66,9 @@ const props = withDefaults(
       md: 12,
       sm: 24,
       xs: 24,
+    }),
+    itemStyle: () => ({
+      padding: '20px 40px',
     }),
   }
 );

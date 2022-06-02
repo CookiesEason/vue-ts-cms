@@ -11,4 +11,5 @@ app.use(register);
 app.use(store, key);
 setupStore();
 app.use(router);
+
 app.mount('#app');
