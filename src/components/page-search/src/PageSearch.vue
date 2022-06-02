@@ -6,7 +6,7 @@
       </template>
       <template #footer>
         <div class="handle-btns">
-          <el-button :icon="Refresh">重置</el-button>
+          <el-button :icon="Refresh" @click="handleReset">重置</el-button>
           <el-button type="primary" :icon="Search">搜索</el-button>
         </div>
       </template>
@@ -16,16 +16,23 @@
 
 <script setup lang="ts">
 import { Search, Refresh } from '@element-plus/icons-vue';
-import HlForm from '@/components/base-ui/form';
-import { ref, defineProps } from 'vue';
+import HlForm, { IForm } from '@/components/base-ui/form';
+import { ref, defineProps, unref } from 'vue';
 
-const props = defineProps<{ searchConfig: any }>();
-const modelValue = ref({
-  name: '',
-  password: '',
-  sport: '',
-  createTime: '',
-});
+const props = defineProps<{ searchConfig: IForm }>();
+const formItems = unref(props.searchConfig.formItems);
+const formOriginData: any = {};
+for (const item of formItems) {
+  formOriginData[item.field] = '';
+}
+const modelValue = ref(formOriginData);
+const handleReset = () => {
+  for (const item of formItems) {
+    modelValue.value[item.field] = '';
+  }
+  // 错误写法
+  // modelValue.value = formOriginData;
+};
 </script>
 
 <style scoped>

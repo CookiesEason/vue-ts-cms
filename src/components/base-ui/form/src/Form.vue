@@ -54,7 +54,7 @@ import { IFormItem } from '../type/type';
 const props = withDefaults(
   defineProps<{
     formItems: IFormItem[];
-    labelWidth: string;
+    labelWidth?: string;
     itemStyle?: object;
     colLayout?: object;
     modelValue: any;
