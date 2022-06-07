@@ -44,7 +44,7 @@
 import { defineProps, toRefs, withDefaults, ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useStore } from '@/store';
-import { pathMaptoMenu } from '@/utils/map-router';
+import { pathMaptoMenu } from '@/utils/map-to-all';
 
 const store = useStore();
 const router = useRouter();

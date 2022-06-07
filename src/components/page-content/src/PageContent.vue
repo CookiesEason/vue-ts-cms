@@ -7,7 +7,7 @@
       v-model:page="pageInfo"
     >
       <template #headerHandler>
-        <el-button type="primary">新建用户</el-button>
+        <el-button type="primary" v-if="isCreate">新建用户</el-button>
       </template>
       <template #status="scope">
         <el-button
@@ -27,8 +27,8 @@
       </template>
       <template #handler>
         <div class="hanler-btns">
-          <el-button size="small" text bg type="primary">编辑</el-button>
-          <el-button size="small" text bg type="primary">删除</el-button>
+          <el-button size="small" text bg type="primary" v-if="isUpdate">编辑</el-button>
+          <el-button size="small" text bg type="primary" v-if="isDelete">删除</el-button>
         </div>
       </template>
       <template v-for="item in otherPropsSlots" :key="item.prop" #[item.slotName]="scope">
@@ -44,6 +44,7 @@
 import xTable from '@/components/base-ui/table';
 import { useStore } from '@/store';
 import { computed, defineProps, defineExpose, ref, watch } from 'vue';
+import { userPermission } from '@/hooks/usePermissions';
 const props = defineProps<{
   contentConfig: any;
   pageName: string;
@@ -53,7 +54,14 @@ const pageInfo = ref({
   pageSize: 10,
 });
 const store = useStore();
+
+const isCreate = userPermission(props.pageName, 'create');
+const isUpdate = userPermission(props.pageName, 'update');
+const isDelete = userPermission(props.pageName, 'delete');
+const isQuery = userPermission(props.pageName, 'query');
+
 const getPagData = (queryInfo: any = {}) => {
+  if (!isQuery) return;
   store.dispatch('systemModule/getPageListAction', {
     pageName: props.pageName,
     queryInfo: {

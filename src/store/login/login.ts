@@ -12,7 +12,7 @@ import {
 import { IAccountLoginType } from '@/network/login/type';
 
 import localCache from '@/utils/cache';
-import { mapMenusToRoutes } from '@/utils/map-router';
+import { mapMenusToRoutes, mapMenusToPermissions } from '@/utils/map-to-all';
 
 const loginModule: Module<ILoginState, IRootState> = {
   namespaced: true,
@@ -21,6 +21,7 @@ const loginModule: Module<ILoginState, IRootState> = {
       token: '',
       userInfo: {},
       userMenus: [],
+      permissions: [],
     };
   },
   actions: {
@@ -68,6 +69,8 @@ const loginModule: Module<ILoginState, IRootState> = {
       routes.forEach((route) => {
         router.addRoute('main', route);
       });
+      const permissions = mapMenusToPermissions(userMenus);
+      state.permissions = permissions;
     },
   },
   getters: {},

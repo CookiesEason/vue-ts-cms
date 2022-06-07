@@ -8,7 +8,7 @@
     <page-content
       ref="pageContentRef"
       :contentConfig="contentConfig"
-      pageName="user"
+      pageName="users"
     ></page-content>
   </div>
 </template>

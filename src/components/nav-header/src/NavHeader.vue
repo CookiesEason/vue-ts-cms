@@ -16,7 +16,7 @@ import { ref, defineEmits, computed } from 'vue';
 import { useStore } from '@/store';
 import UserInfo from './UserInfo.vue';
 import Breadcrumb from '@/components/base-ui/breadcrumb';
-import { pathMapBreadcrumbs } from '@/utils/map-router';
+import { pathMapBreadcrumbs } from '@/utils/map-to-all';
 import { useRoute } from 'vue-router';
 
 const emit = defineEmits(['foldChange']);

@@ -7,8 +7,8 @@ const systemModule: Module<ISystemState, IRootState> = {
   namespaced: true,
   state() {
     return {
-      userList: [],
-      userCount: 0,
+      usersList: [],
+      usersCount: 0,
       roleList: [],
       roleCount: 0,
       goodsList: [],
@@ -22,7 +22,7 @@ const systemModule: Module<ISystemState, IRootState> = {
       let pageName = payload.pageName;
       let pageUrl = '';
       switch (pageName) {
-        case 'user':
+        case 'users':
           pageUrl = '/users/list';
           break;
         case 'role':
@@ -43,11 +43,11 @@ const systemModule: Module<ISystemState, IRootState> = {
     },
   },
   mutations: {
-    changeUserList(state, userList: any[]) {
-      state.userList = userList;
+    changeUsersList(state, usersList: any[]) {
+      state.usersList = usersList;
     },
-    changeUserCount(state, userCount: number) {
-      state.userCount = userCount;
+    changeUsersCount(state, usersCount: number) {
+      state.usersCount = usersCount;
     },
     changeRoleList(state, roleList: any[]) {
       state.roleList = roleList;
