@@ -33,30 +33,62 @@
       </template>
     </el-table>
     <div class="footer">
-      <slot name="footer"> </slot>
+      <slot name="footer">
+        <el-pagination
+          :currentPage="page.currentPage"
+          :page-size="page.pageSize"
+          :page-sizes="[10, 20, 30]"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="dataCount"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+        />
+      </slot>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineProps, withDefaults, defineEmits } from 'vue';
-withDefaults(
+const props = withDefaults(
   defineProps<{
     dataList: any[];
     propList: any[];
     showIndexColumn: boolean;
     showSelectColumn: boolean;
     title: string;
+    dataCount: number;
+    page: {
+      currentPage: number;
+      pageSize: number;
+    };
   }>(),
   {
     showIndexColumn: false,
     showSelectColumn: false,
     title: '',
+    dataCount: 0,
+    page: () => ({
+      currentPage: 0,
+      pageSize: 10,
+    }),
   }
 );
-const emits = defineEmits(['selectionChange']);
+const emits = defineEmits(['selectionChange', 'update:page']);
 const handleSelectionChange = (value: any) => {
   emits('selectionChange', value);
+};
+const handleSizeChange = (pageSize: number) => {
+  emits('update:page', {
+    ...props.page,
+    pageSize,
+  });
+};
+const handleCurrentChange = (currentPage: number) => {
+  emits('update:page', {
+    ...props.page,
+    currentPage,
+  });
 };
 </script>
 

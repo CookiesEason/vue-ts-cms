@@ -53,6 +53,12 @@ const systemModule: Module<ISystemState, IRootState> = {
         return state[key];
       };
     },
+    getPageListCountData(state) {
+      return (pageName: string) => {
+        const key = `${pageName}Count` as keyof ISystemState;
+        return state[key];
+      };
+    },
   },
 };
 

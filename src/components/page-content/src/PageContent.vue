@@ -1,6 +1,11 @@
 <template>
   <div class="page-content">
-    <x-table :dataList="dataList" v-bind="contentConfig">
+    <x-table
+      :dataList="dataList"
+      :dataCount="dataCount"
+      v-bind="contentConfig"
+      v-model:page="pageInfo"
+    >
       <template #headerHandler>
         <el-button type="primary">新建用户</el-button>
       </template>
@@ -33,25 +38,33 @@
 <script setup lang="ts">
 import xTable from '@/components/base-ui/table';
 import { useStore } from '@/store';
-import { computed, defineProps, defineExpose } from 'vue';
+import { computed, defineProps, defineExpose, ref, watch } from 'vue';
 const props = defineProps<{
   contentConfig: any;
   pageName: string;
 }>();
+const pageInfo = ref({
+  currentPage: 1,
+  pageSize: 10,
+});
 const store = useStore();
 const getPagData = (queryInfo: any = {}) => {
   store.dispatch('systemModule/getPageListAction', {
     pageName: props.pageName,
     queryInfo: {
-      offset: 0,
-      size: 10,
+      offset: (pageInfo.value.currentPage - 1) * pageInfo.value.pageSize,
+      size: pageInfo.value.pageSize,
       ...queryInfo,
     },
   });
 };
-getPagData();
 const dataList = computed(() => store.getters[`systemModule/getPageListData`](props.pageName));
-// const userCount = computed(() => store.state.systemModule.userCount);
+const dataCount = computed(() =>
+  store.getters[`systemModule/getPageListCountData`](props.pageName)
+);
+
+getPagData();
+watch(pageInfo, () => getPagData());
 
 defineExpose({
   getPagData,
