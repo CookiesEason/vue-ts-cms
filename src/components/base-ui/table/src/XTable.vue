@@ -8,7 +8,13 @@
         </div>
       </slot>
     </div>
-    <el-table :data="dataList" border style="width: 100%" @selection-change="handleSelectionChange">
+    <el-table
+      :data="dataList"
+      border
+      style="width: 100%"
+      @selection-change="handleSelectionChange"
+      v-bind="childrenProps"
+    >
       <el-table-column
         v-if="showSelectColumn"
         type="selection"
@@ -33,7 +39,7 @@
       </template>
     </el-table>
     <div class="footer">
-      <slot name="footer">
+      <slot name="footer" v-if="showFooter">
         <el-pagination
           :currentPage="page.currentPage"
           :page-size="page.pageSize"
@@ -54,14 +60,16 @@ const props = withDefaults(
   defineProps<{
     dataList: any[];
     propList: any[];
-    showIndexColumn: boolean;
-    showSelectColumn: boolean;
+    showIndexColumn?: boolean;
+    showSelectColumn?: boolean;
     title: string;
     dataCount: number;
     page: {
       currentPage: number;
       pageSize: number;
     };
+    childrenProps?: any;
+    showFooter?: boolean;
   }>(),
   {
     showIndexColumn: false,
@@ -72,6 +80,8 @@ const props = withDefaults(
       currentPage: 0,
       pageSize: 10,
     }),
+    childrenProps: () => ({}),
+    showFooter: true,
   }
 );
 const emits = defineEmits(['selectionChange', 'update:page']);

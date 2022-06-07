@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-    <h2>menu</h2>
+    <page-content :contentConfig="contentConfig" pageName="menu"></page-content>
   </div>
 </template>
 
@@ -8,11 +8,12 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'menu-x',
-  setup() {
-    return {};
-  },
+  name: 'MyMenu',
 });
+</script>
+<script setup lang="ts">
+import { contentConfig } from './config';
+import PageContent from '@/components/page-content';
 </script>
 
 <style scoped></style>

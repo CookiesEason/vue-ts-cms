@@ -13,6 +13,8 @@ const systemModule: Module<ISystemState, IRootState> = {
       roleCount: 0,
       goodsList: [],
       goodsCount: 0,
+      menuList: [],
+      menuCount: 0,
     };
   },
   actions: {
@@ -28,6 +30,9 @@ const systemModule: Module<ISystemState, IRootState> = {
           break;
         case 'goods':
           pageUrl = '/goods/list';
+          break;
+        case 'menu':
+          pageUrl = '/menu/list';
           break;
       }
       const pageResult = await getPageListData(pageUrl, payload.queryInfo);
@@ -55,6 +60,12 @@ const systemModule: Module<ISystemState, IRootState> = {
     },
     changeGoodsCount(state, goodsCount: number) {
       state.goodsCount = goodsCount;
+    },
+    changeMenuList(state, menuList: any[]) {
+      state.menuList = menuList;
+    },
+    changeMenuCount(state, menuCount: number) {
+      state.menuCount = menuCount;
     },
   },
   getters: {
