@@ -31,6 +31,11 @@
           <el-button size="small" text bg type="primary">删除</el-button>
         </div>
       </template>
+      <template v-for="item in otherPropsSlots" :key="item.prop" #[item.slotName]="scope">
+        <template v-if="item.slotName">
+          <slot :name="item.slotName" :row="scope.row"></slot
+        ></template>
+      </template>
     </x-table>
   </div>
 </template>
@@ -62,6 +67,17 @@ const dataList = computed(() => store.getters[`systemModule/getPageListData`](pr
 const dataCount = computed(() =>
   store.getters[`systemModule/getPageListCountData`](props.pageName)
 );
+const otherPropsSlots = props.contentConfig?.propList.filter((item: any) => {
+  if (
+    item.slotName === 'status' ||
+    item.slotName === 'createAt' ||
+    item.slotName === 'updateAt' ||
+    item.slotName === 'handler'
+  ) {
+    return false;
+  }
+  return true;
+});
 
 getPagData();
 watch(pageInfo, () => getPagData());
