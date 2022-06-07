@@ -33,21 +33,29 @@
 <script setup lang="ts">
 import xTable from '@/components/base-ui/table';
 import { useStore } from '@/store';
-import { computed, defineProps } from 'vue';
+import { computed, defineProps, defineExpose } from 'vue';
 const props = defineProps<{
   contentConfig: any;
   pageName: string;
 }>();
 const store = useStore();
-store.dispatch('systemModule/getPageListAction', {
-  pageName: props.pageName,
-  queryInfo: {
-    offset: 0,
-    size: 10,
-  },
-});
+const getPagData = (queryInfo: any = {}) => {
+  store.dispatch('systemModule/getPageListAction', {
+    pageName: props.pageName,
+    queryInfo: {
+      offset: 0,
+      size: 10,
+      ...queryInfo,
+    },
+  });
+};
+getPagData();
 const dataList = computed(() => store.getters[`systemModule/getPageListData`](props.pageName));
 // const userCount = computed(() => store.state.systemModule.userCount);
+
+defineExpose({
+  getPagData,
+});
 </script>
 
 <style scoped>
