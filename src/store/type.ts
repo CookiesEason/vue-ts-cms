@@ -2,7 +2,8 @@ import { ILoginState } from './login/type';
 import { ISystemState } from './system/type';
 
 export interface IRootState {
-  name: string;
+  entireDepartment: any[];
+  entireRole: any[];
 }
 
 interface OtherState {

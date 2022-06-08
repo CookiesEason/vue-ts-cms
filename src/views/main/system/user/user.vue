@@ -14,7 +14,8 @@
     ></page-content>
     <page-modal
       ref="pageModalRef"
-      :modalConfig="modalConfig"
+      :modalConfig="newModalConfig"
+      pageName="users"
       :defaultInfo="defaultInfo"
     ></page-modal>
   </div>
@@ -27,6 +28,10 @@ import PageContent from '@/components/page-content';
 import usePageSearch from '@/hooks/usePageSearch';
 import PageModal from '@/components/page-modal';
 import usePageModal from '@/hooks/usePageModal';
+import { useStore } from '@/store';
+import { computed } from 'vue';
+
+const store = useStore();
 
 const [pageContentRef, handleRestBtnClick, handleSearchBtnClick] = usePageSearch();
 
@@ -42,6 +47,22 @@ const editCallback = () => {
     item.isHidden = true;
   }
 };
+const newModalConfig = computed(() => {
+  const departmentItem = modalConfig.formItems.find((item) => item.field === 'departmentId');
+  if (departmentItem) {
+    departmentItem.options = store.state.entireDepartment.map((item) => {
+      return { title: item.name, value: item.id };
+    });
+  }
+  const roleItem = modalConfig.formItems.find((item) => item.field === 'roleId');
+  if (roleItem) {
+    roleItem.options = store.state.entireRole.map((item) => {
+      return { title: item.name, value: item.id };
+    });
+  }
+  return modalConfig;
+});
+
 const [defaultInfo, pageModalRef, handleNewData, handleEditData] = usePageModal(
   newCallback,
   editCallback

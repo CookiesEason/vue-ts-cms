@@ -3,10 +3,28 @@ import loginModule from './login/login';
 import { IRootState, State } from './type';
 import { InjectionKey } from 'vue';
 import systemModule from './system/system';
+import { getPageListData } from '@/network/main/system/system';
 
 const store = createStore<IRootState>({
   state: {
-    name: '123',
+    entireDepartment: [],
+    entireRole: [],
+  },
+  mutations: {
+    changeEntireDepartment(state, list) {
+      state.entireDepartment = list;
+    },
+    changeEntireRole(state, list) {
+      state.entireRole = list;
+    },
+  },
+  actions: {
+    async getInitalAction({ commit }) {
+      const depRes = await getPageListData('/department/list', { offset: 0, size: 1000 });
+      const roleRes = await getPageListData('/role/list', { offset: 0, size: 1000 });
+      commit('changeEntireDepartment', depRes.data.list);
+      commit('changeEntireRole', roleRes.data.list);
+    },
   },
   modules: {
     loginModule,
@@ -16,6 +34,7 @@ const store = createStore<IRootState>({
 
 export function setupStore() {
   store.dispatch('loginModule/loadLocalLogin');
+  store.dispatch('getInitalAction');
 }
 
 export function useStore() {
