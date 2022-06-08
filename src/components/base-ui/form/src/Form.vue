@@ -7,7 +7,12 @@
       <el-row>
         <template v-for="item in formItems" :key="item.label">
           <el-col v-bind="colLayout">
-            <el-form-item :label="item.label" :rules="item.rules" :style="itemStyle">
+            <el-form-item
+              :label="item.label"
+              :rules="item.rules"
+              :style="itemStyle"
+              v-if="!item.isHidden"
+            >
               <template v-if="item.type === 'input' || item.type === 'password'">
                 <el-input
                   :placeholder="item.placeholder"
@@ -49,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref, watch, withDefaults, defineEmits } from 'vue';
+import { defineProps, withDefaults, defineEmits, ref, watch } from 'vue';
 import { IFormItem } from '../type/type';
 const props = withDefaults(
   defineProps<{
@@ -84,6 +89,24 @@ watch(
     deep: true,
   }
 );
+watch(
+  () => props.modelValue,
+  (newValue) => {
+    formData.value = newValue;
+  },
+  {
+    deep: true,
+  }
+);
+
+// const formData = computed({
+//   get: () => props.modelValue,
+//   set: (val) => emits('update:modelValue', val),
+// });
+
+// const handleValueChange = (value: any, field: string) => {
+//   emits('update:modelValue', { ...props.modelValue, [field]: value });
+// };
 </script>
 
 <style scoped>

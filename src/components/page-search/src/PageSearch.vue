@@ -26,14 +26,13 @@ const formOriginData: any = {};
 for (const item of formItems) {
   formOriginData[item.field] = '';
 }
-const formData = ref(formOriginData);
+const formData = ref({ ...formOriginData });
 const handleReset = () => {
   for (const item of formItems) {
     formData.value[item.field] = '';
   }
+  // formData.value = { ...formOriginData };
   emits('restBtnClick');
-  // 错误写法
-  // modelValue.value = formOriginData;
 };
 const handleSearch = () => {
   emits('searchBtnClick', formData.value);

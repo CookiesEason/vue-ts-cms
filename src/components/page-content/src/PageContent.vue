@@ -7,7 +7,7 @@
       v-model:page="pageInfo"
     >
       <template #headerHandler>
-        <el-button type="primary" v-if="isCreate">新建用户</el-button>
+        <el-button type="primary" v-if="isCreate" @click="handleNewClick">新建用户</el-button>
       </template>
       <template #status="scope">
         <el-button
@@ -25,10 +25,26 @@
       <template #updateAt="scope">
         <span>{{ $filters.formatTime(scope.row.createAt) }}</span>
       </template>
-      <template #handler>
+      <template #handler="scope">
         <div class="hanler-btns">
-          <el-button size="small" text bg type="primary" v-if="isUpdate">编辑</el-button>
-          <el-button size="small" text bg type="primary" v-if="isDelete">删除</el-button>
+          <el-button
+            size="small"
+            text
+            bg
+            type="primary"
+            v-if="isUpdate"
+            @click="handleEditClick(scope.row)"
+            >编辑</el-button
+          >
+          <el-button
+            size="small"
+            text
+            bg
+            type="primary"
+            v-if="isDelete"
+            @click="handleDeleteClick(scope.row)"
+            >删除</el-button
+          >
         </div>
       </template>
       <template v-for="item in otherPropsSlots" :key="item.prop" #[item.slotName]="scope">
@@ -43,12 +59,13 @@
 <script setup lang="ts">
 import xTable from '@/components/base-ui/table';
 import { useStore } from '@/store';
-import { computed, defineProps, defineExpose, ref, watch } from 'vue';
+import { computed, defineEmits, defineProps, defineExpose, ref, watch } from 'vue';
 import { userPermission } from '@/hooks/usePermissions';
 const props = defineProps<{
   contentConfig: any;
   pageName: string;
 }>();
+const emits = defineEmits(['newBtnClick', 'editBtnClick']);
 const pageInfo = ref({
   currentPage: 1,
   pageSize: 10,
@@ -86,6 +103,19 @@ const otherPropsSlots = props.contentConfig?.propList.filter((item: any) => {
   }
   return true;
 });
+
+const handleNewClick = () => {
+  emits('newBtnClick');
+};
+const handleEditClick = (item: any) => {
+  emits('editBtnClick', item);
+};
+const handleDeleteClick = (item: any) => {
+  store.dispatch('deletePageDataById', {
+    pageName: props.pageName,
+    id: item.id,
+  });
+};
 
 getPagData();
 watch(pageInfo, () => getPagData());

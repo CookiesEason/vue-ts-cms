@@ -122,6 +122,8 @@ const handleCurrentChange = (currentPage: number) => {
 
 .footer {
   margin-top: 15px;
+  display: flex;
+  justify-content: center;
 
   .el-pagination {
     text-align: right;

@@ -31,6 +31,7 @@ import {
   ElTableColumn,
   ElPagination,
   ElImage,
+  ElDialog,
 } from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
@@ -67,6 +68,7 @@ const components = [
   ElTableColumn,
   ElPagination,
   ElImage,
+  ElDialog,
 ];
 
 export default {
