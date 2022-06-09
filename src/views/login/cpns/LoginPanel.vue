@@ -34,7 +34,7 @@ import { ref } from 'vue';
 import LoginAccount from './LoginAccount.vue';
 import LoginPhone from './LoginPhone.vue';
 
-import localCache from '@/utils/cache.ts';
+import localCache from '@/utils/cache';
 
 let currentTab = ref('account');
 let isKeepPassword = ref(localCache.getCache('isKeepPassword') ?? false);

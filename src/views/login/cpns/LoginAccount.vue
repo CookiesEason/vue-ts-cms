@@ -17,8 +17,10 @@ import { ref, reactive, defineExpose } from 'vue';
 import { rules } from '../config/account-config';
 import localCache from '@/utils/cache';
 import { useStore } from '@/store';
+// import { useLoginStore } from '@/store/login/useLoginStore';
 
 const store = useStore();
+// const loginStore = useLoginStore();
 
 const account = reactive({
   name: localCache.getCache('name') ?? '',
@@ -39,6 +41,7 @@ const loginAction = (isKeepPassword: boolean) => {
         localCache.deteleCache('password');
         localCache.setCache('isKeepPassword', isKeepPassword);
       }
+      // loginStore.accountLoginAction({ ...account });
       store.dispatch('loginModule/accountLoginAction', { ...account });
     }
   });
