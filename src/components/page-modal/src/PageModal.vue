@@ -2,6 +2,7 @@
   <div class="page-modal">
     <el-dialog v-model="dialogVisible" title="新建用户" width="30%" center destroy-on-close>
       <HlForm v-bind="modalConfig" v-model="formData"></HlForm>
+      <slot></slot>
       <template #footer>
         <span class="dialog-footer">
           <el-button @click="dialogVisible = false">取消</el-button>
@@ -20,6 +21,7 @@ const props = defineProps<{
   modalConfig: any;
   defaultInfo: any;
   pageName: string;
+  otherInfo?: any;
 }>();
 const store = useStore();
 const dialogVisible = ref(false);
@@ -30,13 +32,13 @@ const handleConfirmClick = () => {
   if (Object.keys(props.defaultInfo).length) {
     store.dispatch('systemModule/editPageDataAction', {
       pageName: props.pageName,
-      editData: { ...formData.value },
+      editData: { ...formData.value, ...props.otherInfo },
       id: props.defaultInfo.id,
     });
   } else {
     store.dispatch('systemModule/createPageDataAction', {
       pageName: props.pageName,
-      newData: { ...formData.value },
+      newData: { ...formData.value, ...props.otherInfo },
     });
   }
 };

@@ -1,7 +1,7 @@
 import PageModal from '@/components/page-modal';
 import { ref, Ref } from 'vue';
 
-type CallbackType = () => void;
+type CallbackType = (item?: any) => void;
 
 export default function usePageModal(
   newCallback?: CallbackType,
@@ -17,7 +17,7 @@ export default function usePageModal(
   const handleEditData = (item: any) => {
     defaultInfo.value = { ...item };
     if (pageModalRef.value) pageModalRef.value.dialogVisible = true;
-    editCallback && editCallback();
+    editCallback && editCallback(item);
   };
   return [defaultInfo, pageModalRef, handleNewData, handleEditData];
 }

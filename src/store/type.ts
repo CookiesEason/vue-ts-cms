@@ -4,6 +4,7 @@ import { ISystemState } from './system/type';
 export interface IRootState {
   entireDepartment: any[];
   entireRole: any[];
+  entireMenu: any[];
 }
 
 interface OtherState {

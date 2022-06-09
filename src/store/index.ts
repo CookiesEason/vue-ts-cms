@@ -9,6 +9,7 @@ const store = createStore<IRootState>({
   state: {
     entireDepartment: [],
     entireRole: [],
+    entireMenu: [],
   },
   mutations: {
     changeEntireDepartment(state, list) {
@@ -17,13 +18,18 @@ const store = createStore<IRootState>({
     changeEntireRole(state, list) {
       state.entireRole = list;
     },
+    changeEntireMenu(state, list) {
+      state.entireMenu = list;
+    },
   },
   actions: {
     async getInitalAction({ commit }) {
       const depRes = await getPageListData('/department/list', { offset: 0, size: 1000 });
       const roleRes = await getPageListData('/role/list', { offset: 0, size: 1000 });
+      const menus = await getPageListData('/menu/list', {});
       commit('changeEntireDepartment', depRes.data.list);
       commit('changeEntireRole', roleRes.data.list);
+      commit('changeEntireMenu', menus.data.list);
     },
   },
   modules: {

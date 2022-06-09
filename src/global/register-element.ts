@@ -32,6 +32,7 @@ import {
   ElPagination,
   ElImage,
   ElDialog,
+  ElTree,
 } from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
@@ -69,6 +70,7 @@ const components = [
   ElPagination,
   ElImage,
   ElDialog,
+  ElTree,
 ];
 
 export default {
