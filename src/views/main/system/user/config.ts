@@ -58,6 +58,7 @@ export const searchConfig: IForm = {
 
 export const contentConfig = {
   title: '用户列表',
+  newBtnName: '新建用户',
   showIndexColumn: true,
   showSelectColumn: true,
   propList: [

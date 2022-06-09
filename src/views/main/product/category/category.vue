@@ -1,18 +1,18 @@
 <template>
   <div class="category">
-    <h2>category</h2>
+    <page-search :searchConfig="searchConfig" />
+    <page-content
+      ref="pageContentRef"
+      pageName="category"
+      :contentConfig="contentConfig"
+    ></page-content>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'category',
-  setup() {
-    return {};
-  },
-});
+<script setup lang="ts">
+import PageSearch from '@/components/page-search';
+import PageContent from '@/components/page-content';
+import { searchConfig, contentConfig } from './config';
 </script>
 
 <style scoped></style>

@@ -47,6 +47,7 @@ export const contentConfig = {
     },
     { label: '操作', minWidth: '120', slotName: 'handler' },
   ],
+  newBtnName: '新建角色',
   showIndexColumn: true,
   showSelectColumn: true,
 };

@@ -1,9 +1,14 @@
 <template>
   <div class="role">
-    <page-search :searchConfig="searchConfig" />
+    <page-search
+      :searchConfig="searchConfig"
+      @restBtnClick="handleRestBtnClick"
+      @searchBtnClick="handleSearchBtnClick"
+    />
     <page-content
+      ref="pageContentRef"
       :content-config="contentConfig"
-      page-name="role"
+      pageName="role"
       @newBtnClick="handleNewData"
       @editBtnClick="handleEditData"
     ></page-content>
@@ -39,6 +44,9 @@ import { useStore } from '@/store';
 import { computed, nextTick, ref } from 'vue';
 import { ElTree } from 'element-plus';
 import { menuMapLeafKeys } from '@/utils/map-to-all';
+import usePageSearch from '@/hooks/usePageSearch';
+
+const [pageContentRef, handleRestBtnClick, handleSearchBtnClick] = usePageSearch();
 
 const elTreeRef = ref<InstanceType<typeof ElTree>>();
 const editCallback = (item: any) => {

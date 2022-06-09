@@ -20,6 +20,7 @@ export const contentConfig = {
     },
     { label: '操作', minWidth: '120', slotName: 'handler' },
   ],
+  newBtnName: '新建商品',
   showIndexColumn: true,
   showSelectColumn: true,
 };

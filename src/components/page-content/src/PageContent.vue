@@ -7,7 +7,9 @@
       v-model:page="pageInfo"
     >
       <template #headerHandler>
-        <el-button type="primary" v-if="isCreate" @click="handleNewClick">新建用户</el-button>
+        <el-button type="primary" v-if="isCreate" @click="handleNewClick">{{
+          contentConfig.newBtnName
+        }}</el-button>
       </template>
       <template #status="scope">
         <el-button
@@ -23,7 +25,7 @@
         <span>{{ $filters.formatTime(scope.row.createAt) }}</span>
       </template>
       <template #updateAt="scope">
-        <span>{{ $filters.formatTime(scope.row.createAt) }}</span>
+        <span>{{ $filters.formatTime(scope.row.updateAt) }}</span>
       </template>
       <template #handler="scope">
         <div class="hanler-btns">
