@@ -34,7 +34,6 @@ const store = createStore<IRootState>({
 
 export function setupStore() {
   store.dispatch('loginModule/loadLocalLogin');
-  store.dispatch('getInitalAction');
 }
 
 export function useStore() {

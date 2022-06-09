@@ -25,11 +25,14 @@ const loginModule: Module<ILoginState, IRootState> = {
     };
   },
   actions: {
-    async accountLoginAction({ commit }, payload: IAccountLoginType) {
+    async accountLoginAction({ commit, dispatch }, payload: IAccountLoginType) {
       const res = await accountLoginRequest(payload);
       const { id, token } = res.data;
       commit('changeToken', token);
       localCache.setCache('token', token);
+
+      // 请求角色部门菜单列表
+      dispatch('getInitalAction', null, { root: true });
 
       const userInfoResult = await requestUserInfoById(id);
       commit('changeUserInfo', userInfoResult.data);
@@ -41,10 +44,12 @@ const loginModule: Module<ILoginState, IRootState> = {
 
       router.push('/main');
     },
-    loadLocalLogin({ commit }) {
+    loadLocalLogin({ commit, dispatch }) {
       const token = localCache.getCache('token');
       if (token) {
         commit('changeToken', token);
+        // 请求角色部门菜单列表
+        dispatch('getInitalAction', null, { root: true });
       }
       const userInfo = localCache.getCache('userInfo');
       if (userInfo) {
